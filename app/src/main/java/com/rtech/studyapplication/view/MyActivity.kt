@@ -8,7 +8,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.rtech.studyapplication.R
 import com.rtech.studyapplication.model.Student
+import com.rtech.studyapplication.model.db.StudentDatabase
+import com.rtech.studyapplication.model.repo.StudentRepo
 import com.rtech.studyapplication.viewmodel.StudentViewModel
+import com.rtech.studyapplication.viewmodel.StudentViewModelFactory
+import kotlinx.android.synthetic.main.activity_my.btnOk
+import kotlinx.android.synthetic.main.activity_my.txtClass
+import kotlinx.android.synthetic.main.activity_my.txtName
+import kotlinx.android.synthetic.main.activity_my.txtRollNo
 
 class MyActivity : AppCompatActivity() {
 
@@ -18,24 +25,25 @@ class MyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my)
-        viewModel = ViewModelProvider(this).get(StudentViewModel::class.java)
+        val dao = StudentDatabase.getDbInstance(applicationContext).studentDao()
+        val studentRepo = StudentRepo(dao)
+        viewModel = ViewModelProvider(this, StudentViewModelFactory(studentRepo)).get(StudentViewModel::class.java)
         observeViewModel()
         viewModel.getStudentData()
+        btnOk.setOnClickListener {
+            viewModel.addStudent(Student(0, txtName.text.toString(), txtRollNo.text.toString(), txtClass.text.toString().toInt()))
+        }
     }
 
     private fun observeViewModel() {
-        viewModel.studentLiveData.observe(this, Observer { student->
-            assignDataToView(student)
+        viewModel.studentLiveData.observe(this, Observer { students->
+            assignDataToView(students)
         })
     }
 
-    private fun assignDataToView(it: Student?) {
-        findViewById<TextView>(R.id.txtName).apply {
-            text = it?.name
-        }
-
+    private fun assignDataToView(it: List<Student>?) {
         findViewById<TextView>(R.id.txtClassAndRn).apply {
-            text = "${it?.classN} ${it?.rollNo}"
+            text = it.toString()
         }
     }
 }
