@@ -13,6 +13,9 @@ import com.rtech.studyapplication.model.repo.StudentRepo
 import com.rtech.studyapplication.viewmodel.StudentViewModel
 import com.rtech.studyapplication.viewmodel.StudentViewModelFactory
 import kotlinx.android.synthetic.main.activity_my.btnOk
+import kotlinx.android.synthetic.main.activity_my.txtClass
+import kotlinx.android.synthetic.main.activity_my.txtName
+import kotlinx.android.synthetic.main.activity_my.txtRollNo
 
 class MyActivity : AppCompatActivity() {
 
@@ -22,11 +25,14 @@ class MyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my)
-        val dao = StudentDatabase.getDbInstance(applicationContext).studentDao
+        val dao = StudentDatabase.getDbInstance(applicationContext).studentDao()
         val studentRepo = StudentRepo(dao)
         viewModel = ViewModelProvider(this, StudentViewModelFactory(studentRepo)).get(StudentViewModel::class.java)
         observeViewModel()
         viewModel.getStudentData()
+        btnOk.setOnClickListener {
+            viewModel.addStudent(Student(0, txtName.text.toString(), txtRollNo.text.toString(), txtClass.text.toString().toInt()))
+        }
     }
 
     private fun observeViewModel() {
@@ -35,8 +41,8 @@ class MyActivity : AppCompatActivity() {
         })
     }
 
-    private fun assignDataToView(it: List<Student>) {
-        findViewById<TextView>(R.id.txtName).apply {
+    private fun assignDataToView(it: List<Student>?) {
+        findViewById<TextView>(R.id.txtClassAndRn).apply {
             text = it.toString()
         }
     }

@@ -4,7 +4,11 @@ import com.rtech.studyapplication.model.Student
 import com.rtech.studyapplication.model.dao.StudentDao
 
 class StudentRepo(private val studentDao: StudentDao) {
-    fun getStudents(): List<Student>? {
-        return studentDao.getAllStudent().value
+    suspend fun getStudents(): List<Student> {
+        return studentDao.getAllStudent()
+    }
+
+    suspend fun addStudent(std: Student){
+        studentDao.addStudent(std)
     }
 }

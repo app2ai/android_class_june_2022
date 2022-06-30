@@ -7,21 +7,25 @@ import androidx.room.RoomDatabase
 import com.rtech.studyapplication.model.Student
 import com.rtech.studyapplication.model.dao.StudentDao
 
-@Database(entities = [Student::class], version = 1)
-abstract class StudentDatabase : RoomDatabase() {
+@Database(entities = [Student::class], version = 1, exportSchema = false)
+public abstract class StudentDatabase : RoomDatabase() {
 
-    abstract val studentDao: StudentDao
+    abstract fun studentDao(): StudentDao
     companion object {
-        lateinit var instance: StudentDatabase
+        @Volatile
+        private var INSTANCE: StudentDatabase? = null
+
         fun getDbInstance(context: Context): StudentDatabase {
-            synchronized(this) {
-                instance = Room.databaseBuilder(
+            return INSTANCE ?: synchronized(this){
+                val instance = Room.databaseBuilder(
                     context,
                     StudentDatabase::class.java,
-                    "student_db")
+                    "studentdb")
+                    .fallbackToDestructiveMigration()
                     .build()
+                INSTANCE = instance
+                instance
             }
-            return instance
         }
     }
 }
