@@ -1,9 +1,9 @@
-package com.rtech.studyapplication.model.dao
+package com.rtech.studyapplication.localmodule.model.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.rtech.studyapplication.model.Student
+import com.rtech.studyapplication.localmodule.model.Student
 
 @Dao
 interface StudentDao {

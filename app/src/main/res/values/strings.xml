@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">StudyApplication</string>
+    <string name="go_to_api_screen">Go to API screen</string>
+    <string name="enter_name">Enter name</string>
+    <string name="enter_roll_number">Enter Roll number</string>
+    <string name="enter_class_number">Enter class number</string>
+    <string name="add_in_db">Add IN DB</string>
 </resources>

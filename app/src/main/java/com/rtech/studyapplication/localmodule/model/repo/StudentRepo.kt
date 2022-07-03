@@ -1,7 +1,7 @@
-package com.rtech.studyapplication.model.repo
+package com.rtech.studyapplication.localmodule.model.repo
 
-import com.rtech.studyapplication.model.Student
-import com.rtech.studyapplication.model.dao.StudentDao
+import com.rtech.studyapplication.localmodule.model.Student
+import com.rtech.studyapplication.localmodule.model.dao.StudentDao
 
 class StudentRepo(private val studentDao: StudentDao) {
     suspend fun getStudents(): List<Student> {

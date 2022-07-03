@@ -1,4 +1,4 @@
-package com.rtech.studyapplication.model
+package com.rtech.studyapplication.localmodule.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

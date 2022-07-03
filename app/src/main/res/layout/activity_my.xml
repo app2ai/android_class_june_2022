@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".view.MyActivity">
+    tools:context=".localmodule.view.MyActivity">
 
     <EditText
         android:id="@+id/txtName"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:textSize="12sp"
         android:textColor="@color/black"
-        android:hint="Enter name"
+        android:hint="@string/enter_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="12sp"
-        android:hint="Enter Roll number"
+        android:hint="@string/enter_roll_number"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
         android:textColor="@color/black"
         android:inputType="number"
         android:maxLength="2"
-        android:hint="Enter class number"
+        android:hint="@string/enter_class_number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtRollNo"
@@ -52,7 +52,7 @@
         android:id="@+id/btnOk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add IN DB"
+        android:text="@string/add_in_db"
         android:textSize="14sp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,13 +63,26 @@
     <TextView
         android:id="@+id/txtClassAndRn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:textSize="12sp"
         android:textColor="@color/black"
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnOk"
+        app:layout_constraintBottom_toTopOf="@id/btnGoToNext"
         android:layout_margin="8dp"
+        />
+
+    <Button
+        android:id="@+id/btnGoToNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/go_to_api_screen"
+        android:textSize="14sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

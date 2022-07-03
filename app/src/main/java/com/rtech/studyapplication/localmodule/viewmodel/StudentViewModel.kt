@@ -1,11 +1,11 @@
-package com.rtech.studyapplication.viewmodel
+package com.rtech.studyapplication.localmodule.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.rtech.studyapplication.model.Student
-import com.rtech.studyapplication.model.repo.StudentRepo
+import com.rtech.studyapplication.localmodule.model.Student
+import com.rtech.studyapplication.localmodule.model.repo.StudentRepo
 import kotlinx.coroutines.launch
 
 class StudentViewModel(private val repo: StudentRepo): ViewModel() {
