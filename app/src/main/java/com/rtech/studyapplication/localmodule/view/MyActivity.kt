@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.rtech.studyapplication.R
+import com.rtech.studyapplication.apimodule.view.ApiActivity
 import com.rtech.studyapplication.localmodule.model.Student
 import com.rtech.studyapplication.localmodule.model.db.StudentDatabase
 import com.rtech.studyapplication.localmodule.model.repo.StudentRepo
@@ -35,8 +36,8 @@ class MyActivity : AppCompatActivity() {
             viewModel.addStudent(Student(0, txtName.text.toString(), txtRollNo.text.toString(), txtClass.text.toString().toInt()))
         }
         btnGoToNext.setOnClickListener {
-            val intent = Intent()
-
+            val intent = Intent(this, ApiActivity::class.java)
+            startActivity(intent)
         }
     }
 
