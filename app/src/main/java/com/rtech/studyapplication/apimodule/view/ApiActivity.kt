@@ -5,13 +5,14 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.rtech.studyapplication.R
 import com.rtech.studyapplication.apimodule.model.repo.DummyRepository
 import com.rtech.studyapplication.apimodule.viewmodel.ApiViewModel
 import com.rtech.studyapplication.apimodule.viewmodel.ApiViewModelFactory
 import com.rtech.studyapplication.localmodule.viewmodel.StudentViewModel
 import com.rtech.studyapplication.retrofit.RetrofitClient
-import kotlinx.android.synthetic.main.activity_api.recycler
+import kotlinx.android.synthetic.main.activity_api.recyclerText
 
 class ApiActivity : AppCompatActivity() {
     private lateinit var viewModel: ApiViewModel
@@ -27,12 +28,13 @@ class ApiActivity : AppCompatActivity() {
 
     private fun observeData(){
         viewModel.apiDataLiveData.observe(this, Observer {
-            if (it.isNullOrEmpty()){
+            if (it.isNullOrEmpty()) {
                 Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show()
             } else {
-                val adaptor = ApiDataAdapter(this, it)
-                recycler.adapter = adaptor
-                adaptor.notifyDataSetChanged()
+                recyclerText.text = it[2].name
+                //val adaptor = ApiDataAdapter(this, it)
+                //recycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+                //recycler.adapter = adaptor
             }
         })
     }

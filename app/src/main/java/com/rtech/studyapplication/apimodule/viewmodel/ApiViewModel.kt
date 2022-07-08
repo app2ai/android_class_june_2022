@@ -15,7 +15,8 @@ class ApiViewModel(val repo: DummyRepository): ViewModel() {
 
     fun getApiData(){
         viewModelScope.launch {
-            _apiDataLiveData.postValue(repo.getApiData())
+            val data = repo.getApiData()
+            _apiDataLiveData.postValue(data)
         }
     }
 }
