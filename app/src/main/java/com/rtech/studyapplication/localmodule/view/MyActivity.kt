@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.rtech.studyapplication.R
+import com.rtech.studyapplication.apimodule.view.AirPollutionActivity
 import com.rtech.studyapplication.apimodule.view.ApiActivity
 import com.rtech.studyapplication.localmodule.model.Student
 import com.rtech.studyapplication.localmodule.model.db.StudentDatabase
@@ -14,6 +15,7 @@ import com.rtech.studyapplication.localmodule.model.repo.StudentRepo
 import com.rtech.studyapplication.localmodule.viewmodel.StudentViewModel
 import com.rtech.studyapplication.localmodule.viewmodel.StudentViewModelFactory
 import kotlinx.android.synthetic.main.activity_my.btnGoToNext
+import kotlinx.android.synthetic.main.activity_my.btnGoToPol
 import kotlinx.android.synthetic.main.activity_my.btnOk
 import kotlinx.android.synthetic.main.activity_my.txtClass
 import kotlinx.android.synthetic.main.activity_my.txtName
@@ -37,6 +39,10 @@ class MyActivity : AppCompatActivity() {
         }
         btnGoToNext.setOnClickListener {
             val intent = Intent(this, ApiActivity::class.java)
+            startActivity(intent)
+        }
+        btnGoToPol.setOnClickListener {
+            val intent = Intent(this, AirPollutionActivity::class.java)
             startActivity(intent)
         }
     }

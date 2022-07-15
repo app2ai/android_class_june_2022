@@ -5,4 +5,6 @@
     <string name="enter_roll_number">Enter Roll number</string>
     <string name="enter_class_number">Enter class number</string>
     <string name="add_in_db">Add IN DB</string>
+    <string name="pollution_view">Pollution View</string>
+    <string name="loading">Loading...</string>
 </resources>

@@ -31,10 +31,8 @@ class ApiActivity : AppCompatActivity() {
             if (it.isNullOrEmpty()) {
                 Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show()
             } else {
+                println("Data: $it")
                 recyclerText.text = it[2].name
-                //val adaptor = ApiDataAdapter(this, it)
-                //recycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-                //recycler.adapter = adaptor
             }
         })
     }

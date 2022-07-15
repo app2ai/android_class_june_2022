@@ -7,16 +7,16 @@
 
     <application
         android:allowBackup="true"
+        android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:usesCleartextTraffic="true"
-        android:debuggable="true"
         android:networkSecurityConfig="@xml/network_security"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StudyApplication"
         tools:ignore="HardcodedDebugMode">
-        <activity android:name=".apimodule.view.ApiActivity"/>
+        <activity android:name=".apimodule.view.AirPollutionActivity"/>
+        <activity android:name=".apimodule.view.ApiActivity" />
         <activity android:name=".localmodule.view.MyActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
