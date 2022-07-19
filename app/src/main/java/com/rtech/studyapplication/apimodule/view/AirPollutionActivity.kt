@@ -23,12 +23,21 @@ class AirPollutionActivity : AppCompatActivity() {
         val service = RetrofitClient.weatherService
         val repo = WeatherRepository(service)
         vm = ViewModelProvider(this, AirPollutionViewModelFactory(repo)).get(AirPolutionViewModel::class.java)
-        vm.callPollutionApi(50.0, 50.0)
+        //vm.callPollutionApi(50.0, 50.0)
+        vm.callGeocodeApi("London", 4)
         vm.weatherResponseLiveData.observe(this, Observer { response->
             if (response == null){
                 Toast.makeText(this, "API failed", Toast.LENGTH_LONG).show()
             } else {
                 pollutionText.text = response.list.get(0).main.aqi.toString()
+            }
+        })
+
+        vm.geocodeResponseLiveData.observe(this, Observer { response ->
+            if (response == null){
+                Toast.makeText(this, "API failed", Toast.LENGTH_LONG).show()
+            } else {
+                pollutionText.text = response[0].country
             }
         })
     }
