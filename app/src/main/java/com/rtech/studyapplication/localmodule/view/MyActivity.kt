@@ -14,6 +14,8 @@ import com.rtech.studyapplication.localmodule.model.db.StudentDatabase
 import com.rtech.studyapplication.localmodule.model.repo.StudentRepo
 import com.rtech.studyapplication.localmodule.viewmodel.StudentViewModel
 import com.rtech.studyapplication.localmodule.viewmodel.StudentViewModelFactory
+import com.rtech.studyapplication.notificationmodule.NotificationActivity
+import com.rtech.studyapplication.test.Test
 import kotlinx.android.synthetic.main.activity_my.btnGoToNext
 import kotlinx.android.synthetic.main.activity_my.btnGoToPol
 import kotlinx.android.synthetic.main.activity_my.btnOk
@@ -42,7 +44,7 @@ class MyActivity : AppCompatActivity() {
             startActivity(intent)
         }
         btnGoToPol.setOnClickListener {
-            val intent = Intent(this, AirPollutionActivity::class.java)
+            val intent = Intent(this, NotificationActivity::class.java)
             startActivity(intent)
         }
     }
@@ -56,6 +58,16 @@ class MyActivity : AppCompatActivity() {
     private fun assignDataToView(it: List<Student>?) {
         findViewById<TextView>(R.id.txtClassAndRn).apply {
             text = it.toString()
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val data = Test.test(this)
+        for (dd in data.customers.customer){
+            for (d in dd.extended_fields.field){
+                print("Value of: ${d}")
+            }
         }
     }
 }

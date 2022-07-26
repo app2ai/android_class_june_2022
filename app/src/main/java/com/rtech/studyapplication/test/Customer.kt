@@ -1,0 +1,33 @@
+package com.rtech.studyapplication.test
+
+data class Customer(
+    val coupons: Coupons,
+    val current_nps_status: Any,
+    val current_slab: String,
+    val custom_fields: CustomFields,
+    val email: Any,
+    val extended_fields: ExtendedFields,
+    val external_id: String,
+    val firstname: String,
+    val fraud_details: FraudDetails,
+    val gender: Any,
+    val group_points_summaries: GroupPointsSummaries,
+    val identifiers: List<Any>,
+    val item_status: ItemStatus,
+    val lastname: String,
+    val lifetime_points: Int,
+    val lifetime_purchases: Int,
+    val loyalty_points: Int,
+    val mobile: String,
+    val notes: List<Any>,
+    val points_summaries: PointsSummaries,
+    val registered_by: String,
+    val registered_on: String,
+    val registered_store: RegisteredStore,
+    val registered_till: RegisteredTill,
+    val source: String,
+    val trackers: String,
+    val type: String,
+    val updated_on: String,
+    val user_groups2: List<Any>
+)

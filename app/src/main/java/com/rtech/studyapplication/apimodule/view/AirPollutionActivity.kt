@@ -1,5 +1,6 @@
 package com.rtech.studyapplication.apimodule.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -11,7 +12,9 @@ import com.rtech.studyapplication.apimodule.viewmodel.AirPollutionViewModelFacto
 import com.rtech.studyapplication.apimodule.viewmodel.AirPolutionViewModel
 import com.rtech.studyapplication.apimodule.viewmodel.ApiViewModel
 import com.rtech.studyapplication.apimodule.viewmodel.ApiViewModelFactory
+import com.rtech.studyapplication.notificationmodule.NotificationActivity
 import com.rtech.studyapplication.retrofit.RetrofitClient
+import kotlinx.android.synthetic.main.activity_air_pollution.gotoNotif
 import kotlinx.android.synthetic.main.activity_air_pollution.pollutionText
 
 class AirPollutionActivity : AppCompatActivity() {
@@ -40,5 +43,8 @@ class AirPollutionActivity : AppCompatActivity() {
                 pollutionText.text = response[0].country
             }
         })
+        gotoNotif.setOnClickListener {
+            startActivity(Intent(this, NotificationActivity::class.java))
+        }
     }
 }

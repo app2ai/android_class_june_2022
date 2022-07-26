@@ -1,0 +1,121 @@
+{
+  "status": {
+    "success": "true",
+    "code": 200,
+    "message": "Success",
+    "total": "1",
+    "success_count": "1"
+  },
+  "customers": {
+    "customer": [
+      {
+        "firstname": "",
+        "lastname": "",
+        "mobile": "919890141454",
+        "email": null,
+        "external_id": "VEEVATESTID9",
+        "lifetime_points": 101,
+        "lifetime_purchases": 6,
+        "loyalty_points": 101,
+        "current_slab": "NONE",
+        "registered_on": "2021-06-14 00:00:00",
+        "updated_on": "2022-07-22 13:48:44",
+        "type": "LOYALTY",
+        "source": "instore",
+        "identifiers": [],
+        "gender": null,
+        "registered_by": "admin",
+        "registered_store": {
+          "code": "gsk.admin",
+          "name": "admin"
+        },
+        "registered_till": {
+          "code": "gsk.admin.1",
+          "name": "gsk.admin.1"
+        },
+        "user_groups2": [],
+        "fraud_details": {
+          "status": "NONE",
+          "marked_by": "",
+          "modified_on": "",
+          "reason": ""
+        },
+        "trackers": "",
+        "current_nps_status": null,
+        "custom_fields": {
+          "field": [
+            {
+              "name": "drug_license_number",
+              "value": "1"
+            },
+            {
+              "name": "gst_number",
+              "value": "2"
+            },
+            {
+              "name": "paytmupi",
+              "value": "9190141454@ybl"
+            },
+            {
+              "name": "payuconsent",
+              "value": "1"
+            }
+          ]
+        },
+        "extended_fields": {
+          "field": []
+        },
+        "coupons": {
+          "coupon": []
+        },
+        "notes": [],
+        "points_summaries": {
+          "points_summary": [
+            {
+              "programId": "881",
+              "redeemed": "0",
+              "expired": "0",
+              "returned": "0",
+              "adjusted": "0",
+              "lifetimePoints": "101",
+              "loyaltyPoints": "101",
+              "cumulativePurchases": "6",
+              "currentSlab": "NONE",
+              "nextSlab": "",
+              "nextSlabSerialNumber": "-1",
+              "nextSlabDescription": "",
+              "slabSNo": "1",
+              "slabExpiryDate": "2114-12-31 23:59:59",
+              "totalPoints": "",
+              "delayed_points": "0",
+              "delayed_returned_points": "0",
+              "total_available_points": "101",
+              "total_returned_points": "0",
+              "program_title": "GSK INDDefaultProgram",
+              "program_description": "Default program for GSK IND",
+              "program_points_to_currency_ratio": "1",
+              "linked_partner_programs": {
+                "linked_partner_program": []
+              },
+              "gap_to_upgrade": {
+                "upgrade_strategy": []
+              },
+              "gap_to_renew": {}
+            }
+          ]
+        },
+        "group_points_summaries": {
+          "group_points_summary": []
+        },
+        "item_status": {
+          "success": "true",
+          "code": "1000",
+          "message": "Customer successfully retrieved",
+          "warnings": {
+            "warning": []
+          }
+        }
+      }
+    ]
+  }
+}

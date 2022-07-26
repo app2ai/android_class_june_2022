@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "206088063744",
+    "project_id": "studyapplicationnot",
+    "storage_bucket": "studyapplicationnot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206088063744:android:c772ae2ac3e4e4ccd241e5",
+        "android_client_info": {
+          "package_name": "com.rtech.studyapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206088063744-m2s1aevdga0js90gusvbs8phhnsep68l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALg99-ap4N9st0HZsdRM526O1AIjthfxM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "206088063744-m2s1aevdga0js90gusvbs8phhnsep68l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

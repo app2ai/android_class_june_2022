@@ -7,4 +7,9 @@
     <string name="add_in_db">Add IN DB</string>
     <string name="pollution_view">Pollution View</string>
     <string name="loading">Loading...</string>
+    <string name="send_notification">Send Notification</string>
+    <string name="notification_channel_id">def_not_channel</string>
+    <string name="notification_channel_name">Default FCM notifications</string>
+    <string name="notification_channel_decs">Testing FCM notifications for application</string>
+    <string name="go_to_notification">Go to Notification</string>
 </resources>
