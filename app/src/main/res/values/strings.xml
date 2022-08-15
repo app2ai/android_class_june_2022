@@ -12,4 +12,5 @@
     <string name="notification_channel_name">Default FCM notifications</string>
     <string name="notification_channel_decs">Testing FCM notifications for application</string>
     <string name="go_to_notification">Go to Notification</string>
+    <string name="loading_screen">Loading Screen</string>
 </resources>

@@ -4,7 +4,9 @@
     package="com.rtech.studyapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" tools:node="remove"/>
+    <uses-permission
+        android:name="android.permission.POST_NOTIFICATIONS"
+        tools:node="remove" />
 
     <application
         android:allowBackup="true"
@@ -16,15 +18,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudyApplication"
         tools:ignore="HardcodedDebugMode">
-        <activity android:name=".notificationmodule.NotificationActivity"></activity>
-        <activity android:name=".apimodule.view.AirPollutionActivity" />
-        <activity android:name=".apimodule.view.ApiActivity" />
-        <activity android:name=".localmodule.view.MyActivity">
+        <activity android:name=".splashscreen.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".notificationmodule.NotificationActivity" />
+        <activity android:name=".apimodule.view.AirPollutionActivity" />
+        <activity android:name=".apimodule.view.ApiActivity" />
+        <activity android:name=".localmodule.view.MyActivity">
+
+        </activity>
+
         <service
             android:name=".notificationmodule.service.MyFirebaseMessagingService"
             android:exported="false">
@@ -37,4 +43,5 @@
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="@string/notification_channel_id" />
     </application>
+
 </manifest>

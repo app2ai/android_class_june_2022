@@ -13,9 +13,19 @@ import com.rtech.studyapplication.apimodule.viewmodel.ApiViewModelFactory
 import com.rtech.studyapplication.localmodule.viewmodel.StudentViewModel
 import com.rtech.studyapplication.retrofit.RetrofitClient
 import kotlinx.android.synthetic.main.activity_api.recyclerText
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class ApiActivity : AppCompatActivity() {
     private lateinit var viewModel: ApiViewModel
+
+    private fun myCorutine() = runBlocking {
+        val myJob = launch {
+            delay(1000)
+            print("Hello World")
+        }.join()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +34,7 @@ class ApiActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, ApiViewModelFactory(repo)).get(ApiViewModel::class.java)
         viewModel.getApiData()
         observeData()
+        myCorutine()
     }
 
     private fun observeData(){
@@ -35,5 +46,6 @@ class ApiActivity : AppCompatActivity() {
                 recyclerText.text = it[2].name
             }
         })
+        myCorutine()
     }
 }

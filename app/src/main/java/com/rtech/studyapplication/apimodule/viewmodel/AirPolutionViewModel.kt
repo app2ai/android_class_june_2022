@@ -8,10 +8,10 @@ import com.rtech.studyapplication.apimodule.model.data.GeoCodingData
 import com.rtech.studyapplication.apimodule.model.data.WeatherAirQualityIndex
 import com.rtech.studyapplication.apimodule.model.repo.WeatherRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class AirPolutionViewModel(val repo: WeatherRepository) : ViewModel(){
-
     private var _weatherResponseLiveData = MutableLiveData<WeatherAirQualityIndex>()
     val weatherResponseLiveData: LiveData<WeatherAirQualityIndex> = _weatherResponseLiveData
 
