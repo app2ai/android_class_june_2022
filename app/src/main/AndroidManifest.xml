@@ -18,18 +18,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudyApplication"
         tools:ignore="HardcodedDebugMode">
-        <activity android:name=".splashscreen.SplashActivity">
+        <activity android:name=".bindings.BindingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".emailapp.EmailActivity" />
+        <activity android:name=".splashscreen.SplashActivity" />
         <activity android:name=".notificationmodule.NotificationActivity" />
         <activity android:name=".apimodule.view.AirPollutionActivity" />
         <activity android:name=".apimodule.view.ApiActivity" />
-        <activity android:name=".localmodule.view.MyActivity">
-
-        </activity>
+        <activity android:name=".localmodule.view.MyActivity" />
 
         <service
             android:name=".notificationmodule.service.MyFirebaseMessagingService"
